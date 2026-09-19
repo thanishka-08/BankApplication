@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-// Abstraction
+
 abstract class Bank {
 
     public String name;
