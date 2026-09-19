@@ -8,7 +8,7 @@ abstract class Bank {
     private int pin;
     protected double balance;
 
-    // Constructor
+
     Bank(String name, int accountNumber, int pin, double balance) {
         this.name = name;
         this.accountNumber = accountNumber;
@@ -16,15 +16,15 @@ abstract class Bank {
         this.balance = balance;
     }
 
-    // Encapsulation: private PIN accessed through method
+   
     public boolean checkPin(int enteredPin) {
         return pin == enteredPin;
     }
 
-    // Abstract method
+   
     abstract void bankType();
 
-    // Method Overloading
+  
     void credit(double amount) {
         if (amount > 0) {
             balance = balance + amount;
@@ -44,7 +44,7 @@ abstract class Bank {
         }
     }
 
-    // Debit method
+  
     void debit(double amount) {
         if (amount <= 0) {
             System.out.println("Invalid amount.");
@@ -56,48 +56,48 @@ abstract class Bank {
         }
     }
 
-    // Check balance
+ 
     void checkBalance() {
         System.out.println("Current Balance: " + balance);
     }
 }
 
-// Inheritance
+
 class SavingsAccount extends Bank {
 
     SavingsAccount(String name, int accountNumber, int pin, double balance) {
         super(name, accountNumber, pin, balance);
     }
 
-    // Method Overriding
+   
     @Override
     void bankType() {
         System.out.println("Account Type: Savings Account");
     }
 }
 
-// Another child class
+
 class CurrentAccount extends Bank {
 
     CurrentAccount(String name, int accountNumber, int pin, double balance) {
         super(name, accountNumber, pin, balance);
     }
 
-    // Method Overriding
+  
     @Override
     void bankType() {
         System.out.println("Account Type: Current Account");
     }
 }
 
-// Main class
+
 public class BankApplication {
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
-        // Object creation
+        
         Bank b = new SavingsAccount("Thanishka", 101, 1234, 5000);
 
         System.out.println("===== BANK APPLICATION =====");
